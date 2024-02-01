@@ -14,5 +14,16 @@
   </style>
 </head>
 
+<body>
+  <script>
+    let colors = ['red', 'blue'];
+    let currentColor = 0;
+
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[currentColor];
+      currentColor = (currentColor + 1) % colors.length;
+    }, 10); // Change color every 10 milliseconds (0.01 seconds)
+  </script>
+</body>
 
 </html>
