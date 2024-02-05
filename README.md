@@ -1,4 +1,4 @@
-## Context
+# Context
 
 ### RGB Color Mixing
 
@@ -12,7 +12,7 @@ The flicker fusion threshold is  the limit at which humans can distinguish betwe
 
 For more details: https://en.wikipedia.org/wiki/Flicker_fusion_threshold
 
-## **The Program**
+# The Program
 
 This program combines these concepts to simulate the mixing of colors by rapidly alternating between different colors. The current implementation allows the user to choose up to 6 colors to mix using a color wheel. Once the user clicks the "Submit" button, the next screen begins the simulation, depicting what appears to be a new color.
 
