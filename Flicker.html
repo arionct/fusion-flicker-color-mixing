@@ -85,9 +85,10 @@
 
     // Run script when the button is clicked
     document.getElementById('startButton').onclick = function () {
-      colors[0] = document.getElementById('color1').value;
-      colors[1] = document.getElementById('color2').value;
-      this.remove();
+      // Fetch colors from color pickers
+      colors = Array.from(document.querySelectorAll('.colorPicker')).map(picker => picker.value);
+      this.remove(); // Remove the button after clicking it
+      numColorsSelect.remove(); // Remove the dropdown menu
 
       interval = setInterval(() => {
         document.body.style.backgroundColor = colors[currentColor];
