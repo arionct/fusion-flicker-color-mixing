@@ -18,7 +18,11 @@
       background-color: white;
     }
 
-    .pickerContainer {
+    #pickerContainer {
+      margin-bottom: 20px;
+    }
+
+    .pickerColor {
       margin-bottom: 20px;
     }
 
@@ -31,14 +35,14 @@
 </head>
 
 <body>
-  <!-- Set up the color pickers -->
-  <div class="pickerContainer">
-    <label for="color1">Choose color 1:</label>
-    <input type="color" id="color1" name="color1" value="#FF0000">
-  </div>
-  <div class="pickerContainer">
-    <label for="color2">Choose color 2:</label>
-    <input type="color" id="color2" name="color2" value="#0000FF">
+  <!-- Dropdown to choose number of colors -->
+  <div id="pickerContainer">
+    <label for="numColors">Choose the number of colors:</label>
+    <select id="numColors" name="numColors">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
   </div>
 
   <!-- Set up the start button -->
@@ -46,9 +50,35 @@
 
   <!-- Script to flicker the colors -->
   <script>
+
+    // Declare interval variable to be used later
     let interval;
-    let colors = ['red', 'blue'];
+
+    // Array to store the colors
+    let colors = [];
+
+    // Variable to keep track of the current color
     currentColor = 0;
+
+    // Get the picker container and the number of colors selected
+    const pickerContainer = document.getElementById('pickerContainer');
+    const numColorsSelect = document.getElementById('numColors');
+
+    // Ensure the correct number of color boxes are present
+    numColorsSelect.onchange = function () {
+      // Remove old color pickers
+      document.querySelectorAll('.colorPicker').forEach(picker => picker.remove());
+
+      // Create new color pickers
+      for (let i = 0; i < this.value; i++) {
+        const colorInput = document.createElement('input');
+        colorInput.type = 'color';
+        colorInput.id = 'color' + (i + 1);
+        colorInput.className = 'colorPicker';
+        colorInput.value = i % 2 === 0 ? '#FF0000' : '#0000FF'; // Alternate initial color values
+        pickerContainer.appendChild(colorInput);
+      }
+    };
 
     // Run script when the button is clicked
     document.getElementById('startButton').onclick = function () {
