@@ -14,6 +14,6 @@ For more details: https://en.wikipedia.org/wiki/Flicker_fusion_threshold
 
 ## The Program
 
-This program combines these concepts to simulate the mixing of colors by rapidly alternating between different colors. The current implementation allows the user to choose up to 6 colors to mix using a color wheel. Once the user clicks the "Begin" button, the next screen starts the simulation, depicting what appears to be a single new color. Due to the nature of the flickering, the simulation produces a color as expected by the arithmetic mean mixing as opposed to the root mean square mixing.
+This program combines these concepts to simulate the mixing of colors by rapidly alternating between different colors. The current implementation allows the user to choose up to 6 colors to mix using a color wheel. Once the user clicks the "Begin" button, the next screen starts the simulation, depicting what appears to be a single new color (in reality, it is simply the chosen colors flickering in rapid succession). Due to the nature of the flickering, the simulation produces a color as expected by the arithmetic mean mixing as opposed to the root mean square mixing.
 
 Note: the colors have a transition period to avoid harsh flickering, but some combinations of colors may still be disturbing to the eyes.
